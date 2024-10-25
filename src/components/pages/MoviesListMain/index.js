@@ -1,3 +1,3 @@
-import MoviesListMain from "./MoviesListMain";
+import MoviesListMain from './MoviesListMain';
 
 export default MoviesListMain;

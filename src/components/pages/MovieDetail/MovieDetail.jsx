@@ -1,4 +1,4 @@
-import { ArrowBack } from "@mui/icons-material";
+import { ArrowBack } from '@mui/icons-material';
 import {
   Box,
   Button,
@@ -8,18 +8,18 @@ import {
   Link,
   Stack,
   Typography,
-} from "@mui/material";
-import React from "react";
-import { Link as ReactRouter, useNavigate, useParams } from "react-router-dom";
+} from '@mui/material';
+import React from 'react';
+import { Link as ReactRouter, useNavigate, useParams } from 'react-router-dom';
 
 import {
   useGetFilmQuery,
   useGetSequelsAndPrequelsQuery,
   useGetStaffQuery,
-} from "../../../services/kinopoiskApi";
-import ErrorMessage from "../../ui/ErrorMessage";
-import MovieCard from "../../ui/MovieCard/MovieCard";
-import VideoPlayer from "../../ui/VideoPlayer";
+} from '../../../services/kinopoiskApi';
+import ErrorMessage from '../../ui/ErrorMessage';
+import MovieCard from '../../ui/MovieCard/MovieCard';
+import VideoPlayer from '../../ui/VideoPlayer';
 
 export default function MovieDetail() {
   const { id } = useParams();
@@ -103,7 +103,7 @@ export default function MovieDetail() {
             </Grid>
             <Grid item xs={6}>
               {responseStaff.data
-                .filter((el) => el.professionText === "РDirectors")
+                .filter((el) => el.professionText === 'РDirectors')
                 .map(({ nameEn }) => (
                   <Typography gutterBottom key={nameEn}>
                     {nameEn}
@@ -127,7 +127,7 @@ export default function MovieDetail() {
               <Typography gutterBottom>
                 {responseFilm.data.description
                   ? responseFilm.data.description
-                  : "Description is missing"}
+                  : 'Description is missing'}
               </Typography>
             </Grid>
           </Grid>
@@ -135,7 +135,7 @@ export default function MovieDetail() {
         <Grid item md={2} sm={12}>
           <Typography variant="h6">In the main roles</Typography>
           {responseStaff.data
-            .filter((el) => el.professionText === "Actors")
+            .filter((el) => el.professionText === 'Actors')
             .slice(0, 10)
             .map(({ nameEn, staffId }) => (
               <div key={nameEn}>

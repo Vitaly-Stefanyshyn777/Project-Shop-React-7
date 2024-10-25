@@ -1,29 +1,29 @@
-import { ArrowBack } from "@mui/icons-material";
-import { Button, Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { ArrowBack } from '@mui/icons-material';
+import { Button, Stack, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { MOVIE_LISTS } from "../../../constants";
+import { MOVIE_LISTS } from '../../../constants';
 import {
   useGetFilmsQuery,
   useGetGenresAndCountriesQuery,
-} from "../../../services/kinopoiskApi";
-import ErrorMessage from "../../ui/ErrorMessage";
-import MoviesList from "../../ui/MoviesList/MoviesList";
-import SelectMovies from "../../ui/SelectMovies";
-import MoviesListMainSkeleton from "./MoviesListMainSkeleton";
+} from '../../../services/kinopoiskApi';
+import ErrorMessage from '../../ui/ErrorMessage';
+import MoviesList from '../../ui/MoviesList/MoviesList';
+import SelectMovies from '../../ui/SelectMovies';
+import MoviesListMainSkeleton from './MoviesListMainSkeleton';
 
 export default function MoviesListMain() {
   const location = useLocation();
   const { countries, order, year, genreId } = useSelector(
-    (state) => state.currentQuerySlice,
+    (state) => state.currentQuerySlice
   );
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
 
   const movieType = MOVIE_LISTS.find((el) => el.url === location.pathname);
-  const myGenreId = movieType.url === "/cartoons" ? 18 : genreId;
+  const myGenreId = movieType.url === '/cartoons' ? 18 : genreId;
 
   const responseFilms = useGetFilmsQuery({
     type: movieType.value,

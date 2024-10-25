@@ -1,11 +1,11 @@
-import { Link, Stack } from "@mui/material";
-import BearCarousel, { BearSlideImage } from "bear-react-carousel";
-import React from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link, Stack } from '@mui/material';
+import BearCarousel, { BearSlideImage } from 'bear-react-carousel';
+import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
-import useMoviesQuery from "../../../hooks/useMoviesQuery";
-import ErrorMessage from "../../ui/ErrorMessage";
-import MoviesSkeleton from "./MoviesSkeleton";
+import useMoviesQuery from '../../../hooks/useMoviesQuery';
+import ErrorMessage from '../../ui/ErrorMessage';
+import MoviesSkeleton from './MoviesSkeleton';
 
 export default function Movies() {
   const {
@@ -31,28 +31,28 @@ export default function Movies() {
 
   const carouselArr = [
     {
-      title: "Popular movies",
-      url: "/popular",
+      title: 'Popular movies',
+      url: '/popular',
       data: serializeDataForCarousel(responsePopular.data.items),
     },
     {
-      title: "Best Movies",
-      url: "/best",
+      title: 'Best Movies',
+      url: '/best',
       data: serializeDataForCarousel(responseBest.data.items),
     },
     {
-      title: "Movies",
-      url: "/films",
+      title: 'Movies',
+      url: '/films',
       data: serializeDataForCarousel(responseFilms.data.items),
     },
     {
-      title: "Series",
-      url: "/serials",
+      title: 'Series',
+      url: '/serials',
       data: serializeDataForCarousel(responseSerials.data.items),
     },
     {
-      title: "Cartoons",
-      url: "/cartoons",
+      title: 'Cartoons',
+      url: '/cartoons',
       data: serializeDataForCarousel(responseCartoons.data.items),
     },
   ];

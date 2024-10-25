@@ -1,4 +1,4 @@
-import CloseIcon from "@mui/icons-material/Close";
+import CloseIcon from '@mui/icons-material/Close';
 import {
   Box,
   Button,
@@ -7,11 +7,11 @@ import {
   MenuItem,
   Select,
   Stack,
-} from "@mui/material";
-import React from "react";
-import { useDispatch } from "react-redux";
+} from '@mui/material';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import { resetQuery, selectQuery } from "../../../features/currentQuerySlice";
+import { resetQuery, selectQuery } from '../../../features/currentQuerySlice';
 
 export default function SelectMovies({
   countriesList,
@@ -24,8 +24,8 @@ export default function SelectMovies({
   const dispatch = useDispatch();
 
   const ordersList = [
-    { title: "By rating", value: "RATING" },
-    { title: "According to estimates", value: "NUM_VOTE" },
+    { title: 'By rating', value: 'RATING' },
+    { title: 'According to estimates', value: 'NUM_VOTE' },
   ];
 
   const yearsList = new Array(60).fill(null).map((_, index) => ({
@@ -37,7 +37,7 @@ export default function SelectMovies({
     <Stack
       mt={2}
       mb={2}
-      sx={{ flexDirection: { sm: "column", md: "row" }, gap: 1 }}
+      sx={{ flexDirection: { sm: 'column', md: 'row' }, gap: 1 }}
     >
       <FormControl fullWidth size="small">
         <InputLabel>Sorting</InputLabel>

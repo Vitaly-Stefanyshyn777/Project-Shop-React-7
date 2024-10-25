@@ -1,3 +1,3 @@
-import SelectMovies from "./SelectMovies";
+import SelectMovies from './SelectMovies';
 
 export default SelectMovies;

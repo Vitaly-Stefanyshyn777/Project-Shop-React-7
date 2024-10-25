@@ -1,3 +1,3 @@
-import MoviesListTop from "./MoviesListTop";
+import MoviesListTop from './MoviesListTop';
 
 export default MoviesListTop;

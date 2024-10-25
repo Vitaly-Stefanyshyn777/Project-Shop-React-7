@@ -1,8 +1,8 @@
-import { Box, Skeleton, Stack, useMediaQuery } from "@mui/material";
-import React from "react";
+import { Box, Skeleton, Stack, useMediaQuery } from '@mui/material';
+import React from 'react';
 
 export default function MoviesSkeleton() {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
     <Box mt={2} mb={2}>
@@ -20,8 +20,8 @@ export default function MoviesSkeleton() {
                 key={index}
                 animation="wave"
                 variant="rectangular"
-                height={isMobile ? "520px" : "352px"}
-                width={isMobile ? "100%" : "230px"}
+                height={isMobile ? '520px' : '352px'}
+                width={isMobile ? '100%' : '230px'}
               />
             ))}
           </Stack>

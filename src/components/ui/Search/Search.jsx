@@ -1,25 +1,25 @@
-import { Autocomplete, CircularProgress, TextField } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Autocomplete, CircularProgress, TextField } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { setSearchQuery } from "../../../features/searchQuerySlice";
-import { useGetFilmsQuery } from "../../../services/kinopoiskApi";
+import { setSearchQuery } from '../../../features/searchQuerySlice';
+import { useGetFilmsQuery } from '../../../services/kinopoiskApi';
 
 const movieTypes = {
-  FILM: "Movie",
-  TV_SERIES: "Series",
-  TV_SHOW: "TV Show",
-  MINI_SERIES: "Mini-series",
+  FILM: 'Movie',
+  TV_SERIES: 'Series',
+  TV_SHOW: 'TV Show',
+  MINI_SERIES: 'Mini-series',
 };
 
 export default function Search() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const { countries, genreId, order, type, year, page, keyword } = useSelector(
-    (state) => state.searchQuerySlice,
+    (state) => state.searchQuerySlice
   );
 
   useEffect(() => {
@@ -45,10 +45,10 @@ export default function Search() {
       freeSolo
       sx={{
         width: 300,
-        backgroundColor: "rgba(255,255,255, 0.15)",
-        "& .MuiOutlinedInput-root": {
-          "& fieldset": {
-            border: "none",
+        backgroundColor: 'rgba(255,255,255, 0.15)',
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            border: 'none',
           },
         },
       }}

@@ -1,8 +1,8 @@
-import { Skeleton, Stack, useMediaQuery } from "@mui/material";
-import React from "react";
+import { Skeleton, Stack, useMediaQuery } from '@mui/material';
+import React from 'react';
 
 export default function MoviesListMainSkeleton() {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
     <>
@@ -17,30 +17,30 @@ export default function MoviesListMainSkeleton() {
       <Stack
         mt={2}
         mb={2}
-        sx={{ flexDirection: { sm: "column", md: "row" }, gap: 1 }}
+        sx={{ flexDirection: { sm: 'column', md: 'row' }, gap: 1 }}
       >
         <Skeleton
           animation="wave"
           variant="rounded"
-          width={isMobile ? "100%" : "25%"}
+          width={isMobile ? '100%' : '25%'}
           height={40}
         />
         <Skeleton
           animation="wave"
           variant="rounded"
-          width={isMobile ? "100%" : "25%"}
+          width={isMobile ? '100%' : '25%'}
           height={40}
         />
         <Skeleton
           animation="wave"
           variant="rounded"
-          width={isMobile ? "100%" : "25%"}
+          width={isMobile ? '100%' : '25%'}
           height={40}
         />
         <Skeleton
           animation="wave"
           variant="rounded"
-          width={isMobile ? "100%" : "25%"}
+          width={isMobile ? '100%' : '25%'}
           height={40}
         />
         <Skeleton animation="wave" variant="rounded" width={132} height={40} />

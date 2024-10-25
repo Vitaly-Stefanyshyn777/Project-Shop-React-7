@@ -1,13 +1,13 @@
-import { ArrowBack } from "@mui/icons-material";
-import { Button, Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { ArrowBack } from '@mui/icons-material';
+import { Button, Stack, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { TOP_LISTS } from "../../../constants";
-import { useGetFilmsTopQuery } from "../../../services/kinopoiskApi";
-import ErrorMessage from "../../ui/ErrorMessage";
-import MoviesList from "../../ui/MoviesList/MoviesList";
-import MoviesListTopSkeleton from "./MoviesListTopSkeleton";
+import { TOP_LISTS } from '../../../constants';
+import { useGetFilmsTopQuery } from '../../../services/kinopoiskApi';
+import ErrorMessage from '../../ui/ErrorMessage';
+import MoviesList from '../../ui/MoviesList/MoviesList';
+import MoviesListTopSkeleton from './MoviesListTopSkeleton';
 
 export default function MoviesListTop() {
   const location = useLocation();

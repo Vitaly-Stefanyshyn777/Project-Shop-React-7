@@ -1,12 +1,12 @@
-import { Box, Link, Rating, Stack, Tooltip } from "@mui/material";
-import React from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Box, Link, Rating, Stack, Tooltip } from '@mui/material';
+import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
-import styles from "./MovieCard.module.css";
+import styles from './MovieCard.module.css';
 
 export default function MovieCard({ movie, reload = false }) {
   const linkProps = reload
-    ? { component: "a", href: `/movie/${movie.kinopoiskId}` }
+    ? { component: 'a', href: `/movie/${movie.kinopoiskId}` }
     : { component: RouterLink, to: `/movie/${movie.kinopoiskId}` };
   return (
     <Stack alignItems="center">
@@ -16,7 +16,7 @@ export default function MovieCard({ movie, reload = false }) {
           alt={movie.nameEn}
           className={styles.img}
         />
-        <Link component="p" textAlign="center" sx={{ width: "200px" }}>
+        <Link component="p" textAlign="center" sx={{ width: '200px' }}>
           {movie.nameEn ? movie.nameEn : movie.nameEn}
         </Link>
       </Link>

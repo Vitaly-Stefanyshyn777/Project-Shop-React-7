@@ -1,21 +1,21 @@
-import { CssBaseline } from "@mui/material";
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
+import { CssBaseline } from '@mui/material';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 // import './i18n.js';
 
-import { store } from "./app/store.js";
-import App from "./components/App.jsx";
+import { store } from './app/store.js';
+import App from './components/App.jsx';
 
-import "bear-react-carousel/dist/index.css";
+import 'bear-react-carousel/dist/index.css';
 
-import ToggleColorMode from "./context/ToggleColorMode.jsx";
+import ToggleColorMode from './context/ToggleColorMode.jsx';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <ToggleColorMode>
       <CssBaseline />
       <App />
     </ToggleColorMode>
-  </Provider>,
+  </Provider>
 );

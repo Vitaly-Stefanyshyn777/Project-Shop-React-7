@@ -1,14 +1,14 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
-import { TOP_LISTS } from "../constants";
+import { TOP_LISTS } from '../constants';
 import {
   useGetFilmsQuery,
   useGetFilmsTopQuery,
-} from "../services/kinopoiskApi";
+} from '../services/kinopoiskApi';
 
 export default function useMoviesQuery() {
   const { countries, order, year, page } = useSelector(
-    (state) => state.currentQuerySlice,
+    (state) => state.currentQuerySlice
   );
 
   const responsePopular = useGetFilmsTopQuery({
@@ -22,27 +22,27 @@ export default function useMoviesQuery() {
   });
 
   const responseFilms = useGetFilmsQuery({
-    type: "FILM",
+    type: 'FILM',
     countries,
-    genreId: "1",
+    genreId: '1',
     order,
     year,
     page,
   });
 
   const responseSerials = useGetFilmsQuery({
-    type: "TV_SERIES",
+    type: 'TV_SERIES',
     countries,
-    genreId: "1",
+    genreId: '1',
     order,
     year,
     page,
   });
 
   const responseCartoons = useGetFilmsQuery({
-    type: "FILM",
+    type: 'FILM',
     countries,
-    genreId: "18",
+    genreId: '18',
     order,
     year,
     page,

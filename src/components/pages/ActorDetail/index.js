@@ -1,3 +1,3 @@
-import ActorDetail from "./ActorDetail";
+import ActorDetail from './ActorDetail';
 
 export default ActorDetail;

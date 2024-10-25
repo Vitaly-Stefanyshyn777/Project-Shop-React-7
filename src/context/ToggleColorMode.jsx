@@ -1,28 +1,28 @@
-import { createTheme, ThemeProvider } from "@mui/material";
-import React, { createContext, useEffect, useState } from "react";
+import { createTheme, ThemeProvider } from '@mui/material';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const ColorModeContext = createContext();
 
 export default function ToggleColorMode({ children }) {
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState('dark');
 
   const theme = createTheme({ palette: { mode } });
 
   useEffect(() => {
-    const modeFromLocalStorage = localStorage.getItem("theme");
+    const modeFromLocalStorage = localStorage.getItem('theme');
     if (modeFromLocalStorage) {
       setMode(modeFromLocalStorage);
     } else {
-      localStorage.setItem("theme", "dark");
+      localStorage.setItem('theme', 'dark');
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("theme", mode);
+    localStorage.setItem('theme', mode);
   }, [mode]);
 
   const toggleColorMode = () => {
-    setMode((prevState) => (prevState === "light" ? "dark" : "light"));
+    setMode((prevState) => (prevState === 'light' ? 'dark' : 'light'));
   };
 
   return (

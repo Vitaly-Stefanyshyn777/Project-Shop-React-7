@@ -1,4 +1,4 @@
-import { ArrowBack } from "@mui/icons-material";
+import { ArrowBack } from '@mui/icons-material';
 import {
   Box,
   Button,
@@ -7,12 +7,12 @@ import {
   Link,
   Stack,
   Typography,
-} from "@mui/material";
-import React from "react";
-import { Link as RouterLink, useNavigate, useParams } from "react-router-dom";
+} from '@mui/material';
+import React from 'react';
+import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 
-import { useGetStaffByIdQuery } from "../../../services/kinopoiskApi";
-import ErrorMessage from "../../ui/ErrorMessage";
+import { useGetStaffByIdQuery } from '../../../services/kinopoiskApi';
+import ErrorMessage from '../../ui/ErrorMessage';
 
 export default function ActorDetail() {
   const { id } = useParams();
@@ -36,7 +36,7 @@ export default function ActorDetail() {
         <Grid item xs={12} md={4}>
           <img
             src={data.posterUrl}
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
             alt={data.nameEn}
           />
         </Grid>
@@ -106,7 +106,7 @@ export default function ActorDetail() {
         {data.films
           .filter(
             (item, index, self) =>
-              index === self.findIndex((el) => el.filmId === item.filmId),
+              index === self.findIndex((el) => el.filmId === item.filmId)
           )
           .map((film, index) => (
             <Stack
@@ -118,7 +118,7 @@ export default function ActorDetail() {
               <Link component={RouterLink} to={`/movie/${film.filmId}`}>
                 {film.nameEn ? film.nameEn : film.nameEn}
               </Link>
-              <Typography>{film.rating ? film.rating : "-"}</Typography>
+              <Typography>{film.rating ? film.rating : '-'}</Typography>
             </Stack>
           ))}
       </Stack>

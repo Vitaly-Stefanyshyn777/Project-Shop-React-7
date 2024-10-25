@@ -1,5 +1,5 @@
-import { Skeleton, Stack } from "@mui/material";
-import React from "react";
+import { Skeleton, Stack } from '@mui/material';
+import React from 'react';
 
 export default function MoviesListTopSkeleton() {
   return (

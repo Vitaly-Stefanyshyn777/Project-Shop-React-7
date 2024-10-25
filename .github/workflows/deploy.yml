@@ -10,21 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16' # або іншу версію Node.js, яка тобі потрібна
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # або іншу версію Node.js, яка тобі потрібна
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install webpack and webpack-cli
+        run: |
+          npm install -D webpack webpack-cli
 
-    - name: Run build
-      run: npm run build # Виконує збірку твого проєкту
+      - name: Install dependencies
+        run: npm install
 
-    - name: Deploy to server
-      run: |
-        # Тут додай команду для розгортання, наприклад, через SSH або з використанням інших інструментів
-        echo "Deploying application..."
+      - name: Run build
+        run: npm run build # Виконує збірку твого проєкту
+
+      - name: Deploy to server
+        run: |
+          # Тут додай команду для розгортання, наприклад, через SSH або з використанням інших інструментів
+          echo "Deploying application..."
