@@ -1,12 +1,12 @@
-import pluginJs from "@eslint/js";
-import prettierConfig from "eslint-config-prettier";
-import prettierPlugin from "eslint-plugin-prettier";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
-import globals from "globals";
+import pluginJs from '@eslint/js';
+import prettierConfig from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
+import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
+import globals from 'globals';
 
 export default [
   // Файли для перевірки
-  { files: ["**/*.{js,mjs,cjs,jsx}"] },
+  { files: ['**/*.{js,mjs,cjs,jsx}'] },
   // Параметри для JSX
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
   // Глобальні змінні браузера
@@ -23,7 +23,7 @@ export default [
     // Налаштування для React
     settings: {
       react: {
-        version: "detect", // Автоматичне визначення версії React
+        version: 'detect', // Автоматичне визначення версії React
       },
     },
     // Плагіни для Prettier
@@ -33,9 +33,9 @@ export default [
     // Правила для Prettier і React
     rules: {
       // Використання Prettier для форматування
-      "prettier/prettier": "error",
+      'prettier/prettier': 'error',
       // Вимкнення правила про обов'язкові prop-types для React
-      "react/prop-types": 0,
+      'react/prop-types': 0,
     },
   },
 ];
